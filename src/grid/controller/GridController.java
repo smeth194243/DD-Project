@@ -10,8 +10,7 @@ import grid.view.GridFrame;
 
 public class GridController {
 	
-	// Moon website: http://www.windows2universe.org/our_solar_system/moons_table.html
-	// Earth, Mars, Jupiter, Neptune, Uranus
+
 	private Bike[][] bikes;
 	private GridFrame gridFrame;
 	
@@ -28,11 +27,19 @@ public class GridController {
 		try{
 			BufferedReader reader = new BufferedReader(new InputStreamReader(this.getClass().getResourceAsStream("/grid/assets/bikes.txt")));
 			this.bikes = new Bike[5][10];
-			for(int row = 0; row < 5; row++){
-				String[] moonData = reader.readLine().split(",");
-				for(int col = 0; col < moonData.length; col++){
-					bikes[row][col] = new Bike(moonData[col]);
-				}
+			for(int row = 0; row < this.bikes.length; row++){
+				String[] bikeData = reader.readLine().split(",");
+				for(int col = 0; col < bikes[0].length; col++)
+				{
+					 					if(bikeData.length - 1 < col)
+					 					{
+					 						bikes[row][col] = new Bike("");
+					 					}
+					 					else
+					 					{
+					 						bikes[row][col] = new Bike(bikeData[col]);
+					 					}
+					  				}
 			}
 		}catch(Exception e){
 			e.printStackTrace();

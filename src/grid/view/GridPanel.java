@@ -71,7 +71,7 @@ public class GridPanel extends JPanel {
 		for(int row = 0; row < bikes.length; row++){
 			for(int col = 0; col < bikes[0].length; col++){
 				Bike bike = bikes[row][col];
-				this.tableModel.setValueAt(bike, col, row);
+				this.tableModel.setValueAt(bike.getBikeName(), col, row);
 			}
 		}
 	}

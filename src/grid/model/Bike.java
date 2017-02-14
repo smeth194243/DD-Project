@@ -9,8 +9,9 @@ public class Bike {
 	}
 	
 	@Override
-	public String toString() {
-		return bikeName;
+	public String toString() 
+	{
+		return "The bike name is " + bikeName;
 	}
 	
 	public String getBikeName() {
